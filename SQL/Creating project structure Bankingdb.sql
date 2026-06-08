@@ -1,5 +1,5 @@
 show databases; 
-
+Create database bankingdb;
   -- Creating data base of bank
  use bankingdb;
  
@@ -18,13 +18,7 @@ CREATE TABLE Accounts (
     Balance DECIMAL(10,2),
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID) );
     
-CREATE TABLE AccountBranches (
-    AccountID INT,
-    BranchID INT,
-    AssignmentDate DATE,
-    FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID),
-    FOREIGN KEY (BranchID) REFERENCES Branches(BranchID)
-);
+ 
     
 CREATE TABLE Transactions (
     TransactionID INT PRIMARY KEY,
@@ -40,6 +34,13 @@ CREATE TABLE Branches (
     BranchAddress VARCHAR(200),
     BranchPhone VARCHAR(15)
 );
+CREATE TABLE AccountBranches (
+    AccountID INT,
+    BranchID INT,
+    AssignmentDate DATE,
+    FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID),
+    FOREIGN KEY (BranchID) REFERENCES Branches(BranchID)
+);
 
 CREATE TABLE Loans (
     LoanID INT PRIMARY KEY,
@@ -51,6 +52,8 @@ CREATE TABLE Loans (
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
 );
 describe accounts;
+show databases;
+show tables;
 
     
 

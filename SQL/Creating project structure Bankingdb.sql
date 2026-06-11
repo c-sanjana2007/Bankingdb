@@ -17,9 +17,7 @@ CREATE TABLE Accounts (
     AccountType VARCHAR(20),
     Balance DECIMAL(10,2),
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID) );
-    
- 
-    
+
 CREATE TABLE Transactions (
     TransactionID INT PRIMARY KEY,
     AccountID INT,
@@ -27,6 +25,7 @@ CREATE TABLE Transactions (
     Amount DECIMAL(10,2),
     TransactionType VARCHAR(20),
     FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID) );
+
     
 CREATE TABLE Branches (
 	BranchID INT PRIMARY KEY,
@@ -50,7 +49,7 @@ CREATE TABLE Loans (
     StartDate DATE,
     EndDate DATE,
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
-);
+    );
 describe accounts;
 show databases;
 show tables;
